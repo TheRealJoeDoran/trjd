@@ -159,4 +159,9 @@ else
 	git clone https://github.com/BloodHoundAD/BloodHound.git
 fi
 
+#
+# TO DO: Add winPEAS and linPEAS
+# https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+#
+
 printf "\e[32m[+] DEPLOYMENT COMPLETE.\n\e[39m"
