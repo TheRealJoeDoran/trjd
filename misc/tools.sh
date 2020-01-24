@@ -160,8 +160,9 @@ else
 fi
 
 #
-# TO DO: Add winPEAS and linPEAS
+# TO DO: Add
 # https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+# https://github.com/danielmiessler/SecLists
 #
 
 printf "\e[32m[+] DEPLOYMENT COMPLETE.\n\e[39m"
