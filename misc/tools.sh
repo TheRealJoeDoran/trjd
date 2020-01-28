@@ -6,7 +6,7 @@ installing () {
 	printf "\e[32m[+] INSTALLING %s...\n\e[39m" "${1}"
 }
 
-apt-get update && apt-get install responder metasploit-framework secure-delete crackmapexec pv pigz jq gobuster tmux ipmitool
+apt-get update && apt-get install responder metasploit-framework secure-delete crackmapexec pv pigz jq gobuster tmux ipmitool exploitdb
 
 if [ -d "/opt/Empire" ]; then
 	updating "Empire"
@@ -48,6 +48,7 @@ if [ -d "/opt/CMSmap" ]; then
 	updating "CMSmap"
 	cd /opt/CMSmap/
 	git pull
+	cmsmap -U PC
 else
 	installing "CMSmap"
 	cd /opt/
@@ -163,6 +164,7 @@ fi
 # TO DO: Add
 # https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
 # https://github.com/danielmiessler/SecLists
+# https://https://github.com/frohoff/ysoserial.git
 #
 
 printf "\e[32m[+] DEPLOYMENT COMPLETE.\n\e[39m"
