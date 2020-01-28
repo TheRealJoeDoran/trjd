@@ -160,11 +160,44 @@ else
 	git clone https://github.com/BloodHoundAD/BloodHound.git
 fi
 
+if [ -d "/opt/ysoserial" ]; then
+	updating "ysoserial"
+	cd /opt/ysoserial/
+	git pull
+	wget https://jitpack.io/com/github/frohoff/ysoserial/master-SNAPSHOT/ysoserial-master-SNAPSHOT.jar
+	mv ysoserial-master-SNAPSHOT.jar ysoserial.jar
+else
+	installing "ysoserial"
+	cd /opt/
+	git clone https://github.com/frohoff/ysoserial.git
+	cd /opt/ysoserial/
+	wget https://jitpack.io/com/github/frohoff/ysoserial/master-SNAPSHOT/ysoserial-master-SNAPSHOT.jar
+	mv ysoserial-master-SNAPSHOT.jar ysoserial.jar
+fi
+
+if [ -d "/opt/Seclists" ]; then
+	updating "SecLists"
+	cd /opt/SecLists/
+	git pull
+else
+	installing "SecLists"
+	cd /opt/
+	git clone https://github.com/danielmiessler/SecLists
+fi
+
+if [ -d "/opt/privilege-escalation-awesome-scripts-suite" ]; then
+	updating "WINpeas and LINpeas"
+	cd /opt/privilege-escalation-awesome-scripts-suite/
+	git pull
+else
+	installing "WINpeas and LINpeas"
+	cd /opt/
+	git clone https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
+fi
+
+
 #
 # TO DO: Add
-# https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite
-# https://github.com/danielmiessler/SecLists
-# https://https://github.com/frohoff/ysoserial.git
 #
 
 printf "\e[32m[+] DEPLOYMENT COMPLETE.\n\e[39m"
